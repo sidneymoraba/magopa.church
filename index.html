@@ -60,15 +60,30 @@
     .soft { background: var(--soft); }
 
     /* ---------- top bar ---------- */
+    /* header floats over the big picture */
     #top {
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
       z-index: 5;
     }
 
     nav {
-      background: var(--navy);
+      background: transparent;
       color: #fff;
+      border-bottom: 1px solid #fff;
+      transition: background .3s;
+    }
+
+    /* once you scroll (or the page has no big picture) the header turns solid blue */
+    #top.solid nav {
+      background: var(--navy);
+    }
+
+    /* pages with no big picture need space so the header doesn't cover the title */
+    main.no-hero {
+      padding-top: 68px;
     }
 
     nav .wrap {
@@ -321,18 +336,90 @@
     footer {
       background: var(--navy);
       color: #fff;
-      padding: 48px 0;
+      border-top: 4px solid #fff;
       font-size: .95rem;
     }
 
-    footer a { color: #fff; }
-    footer h3 { color: #fff; }
-
     .fgrid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 28px;
+      grid-template-columns: 1.6fr 1fr 1fr;
+      gap: 48px;
+      padding-top: 64px;
+      padding-bottom: 48px;
     }
+
+    .fbrand img {
+      height: 60px;
+      width: auto;
+      margin-bottom: 16px;
+    }
+
+    .fbrand h3 {
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .fbrand p {
+      max-width: 340px;
+      margin: 0;
+      color: rgba(255, 255, 255, .8);
+    }
+
+    footer h4 {
+      margin: 0 0 16px;
+      font: 600 .8rem "Source Sans 3", sans-serif;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .6);
+    }
+
+    footer ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    footer li { margin-bottom: 10px; }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      opacity: .9;
+    }
+
+    footer a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    .fbar {
+      border-top: 1px solid rgba(255, 255, 255, .2);
+    }
+
+    .fbar .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      font-size: .88rem;
+      color: rgba(255, 255, 255, .7);
+    }
+
+    .totop {
+      background: none;
+      border: 1px solid rgba(255, 255, 255, .5);
+      color: #fff;
+      border-radius: 999px;
+      padding: 6px 16px;
+      font: inherit;
+      font-size: .85rem;
+      cursor: pointer;
+    }
+
+    .totop:hover { background: #fff; color: var(--navy); }
 
     /* ---------- calendar ---------- */
     .cal {
@@ -427,6 +514,7 @@
     /* phones */
     @media (max-width: 760px) {
       .split { grid-template-columns: 1fr; }
+      .fgrid { grid-template-columns: 1fr; gap: 32px; }
       .read { grid-template-columns: 1fr; }
       .cal div { min-height: 54px; }
     }
@@ -1142,36 +1230,50 @@
       pick("#menu").classList.remove("open");
       pick("#burger").classList.remove("open");
 
+      // pages with a big picture at the top let the header be see-through
+      const hasHero = document.querySelector(".hero");
+      pick("#app").classList.toggle("no-hero", !hasHero);
+      updateHeader();
+
       // footer
       const footerLogo = site.logo_img
-        ? `<img src="${safe(site.logo_img)}" alt="${safe(site.hero4)}" style="height:56px;margin-bottom:12px">`
+        ? `<img src="${safe(site.logo_img)}" alt="${safe(site.hero4)}">`
         : `<h3>${safe(site.hero4)}</h3>`;
+
+      // only show email / phone / office if they were filled in
+      const contactLines = [];
+      if (site.email) contactLines.push(`<li><a href="mailto:${safe(site.email)}">${safe(site.email)}</a></li>`);
+      if (site.phone) contactLines.push(`<li><a href="tel:${safe(site.phone)}">${safe(site.phone)}</a></li>`);
+      if (site.office && site.office.trim()) contactLines.push(`<li>${safe(site.office)}</li>`);
+      const contactList = contactLines.join("") || "<li>Contact details coming soon</li>";
 
       pick("#foot").innerHTML = `
         <div class="wrap fgrid">
-          <div>
+          <div class="fbrand">
             ${footerLogo}
-            <p>${safe(site.office)}</p>
-            <p>
-              <a href="mailto:${safe(site.email)}">${safe(site.email)}</a><br>
-              <a href="tel:${safe(site.phone)}">${safe(site.phone)}</a>
-            </p>
+            <p>${safe(site.about_lead)}</p>
           </div>
           <div>
-            <h3>Location</h3>
-            <p>${safe(site.location_name)}<br>${safe(site.location_address)}</p>
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="#/about">About Us</a></li>
+              <li><a href="#/visit">Visit Us</a></li>
+              <li><a href="#/calendar">Church Calendar</a></li>
+              <li><a href="#/readings">Sunday Readings</a></li>
+              <li><a href="#/app">Get the App</a></li>
+            </ul>
           </div>
           <div>
-            <h3>Follow us</h3>
-            <p>
-              <a href="${safe(site.facebook)}">Facebook</a><br>
-              <a href="${safe(site.instagram)}">Instagram</a><br>
-              <a href="${safe(site.youtube)}">YouTube</a>
-            </p>
-            <p><a href="#/app">Download the app</a></p>
+            <h4>Contact</h4>
+            <ul>${contactList}</ul>
           </div>
         </div>
-        <div class="wrap"><p>© ${new Date().getFullYear()} ${safe(site.hero4)}</p></div>`;
+        <div class="fbar">
+          <div class="wrap">
+            <span>© ${new Date().getFullYear()} ${safe(site.hero4)}. All rights reserved.</span>
+            <button class="totop" data-act="top">Back to top ↑</button>
+          </div>
+        </div>`;
     }
 
 
@@ -1190,6 +1292,11 @@
       if (action === "next") {
         calendarMonth = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth() + 1, 1);
         return showPage();
+      }
+
+      // back to top button in the footer
+      if (action === "top") {
+        return window.scrollTo({ top: 0, behavior: "smooth" });
       }
 
       // admin tabs
@@ -1290,6 +1397,7 @@
       const isOpen = pick("#menu").classList.toggle("open");
       pick("#burger").classList.toggle("open", isOpen);
       pick("#burger").setAttribute("aria-expanded", isOpen);
+      updateHeader();
     });
 
     // clicking anywhere else closes the menu
@@ -1297,8 +1405,19 @@
       if (!event.target.closest("#top")) {
         pick("#menu").classList.remove("open");
         pick("#burger").classList.remove("open");
+        updateHeader();
       }
     });
+
+    // header is see-through at the very top of a page with a big picture,
+    // and turns solid blue when you scroll, open the menu, or are on a plain page
+    function updateHeader() {
+      const hasHero = document.querySelector(".hero");
+      const scrolled = window.scrollY > 40;
+      const menuOpen = pick("#menu").classList.contains("open");
+      pick("#top").classList.toggle("solid", !hasHero || scrolled || menuOpen);
+    }
+    window.addEventListener("scroll", updateHeader);
 
     // change page when the address (#/something) changes
     window.addEventListener("hashchange", showPage);
