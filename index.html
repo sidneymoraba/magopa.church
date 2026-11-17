@@ -106,6 +106,17 @@
       width: auto;
     }
 
+    /* thin white outline that follows the shape of a transparent logo
+       (make the 1.5px bigger for a thicker border) */
+    nav .logo img,
+    .fbrand img {
+      filter:
+        drop-shadow(1.5px 0 0 #fff)
+        drop-shadow(-1.5px 0 0 #fff)
+        drop-shadow(0 1.5px 0 #fff)
+        drop-shadow(0 -1.5px 0 #fff);
+    }
+
     nav .btn {
       background: #fff;
       color: var(--navy);
