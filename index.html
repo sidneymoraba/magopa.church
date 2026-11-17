@@ -1,328 +1,1310 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>St. John Apostolic Faith Mission Church</title>
-<meta name="description" content="One church worshiping Jesus and making His name known in our city and world.">
-<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#191970"><link rel="apple-touch-icon" href="icon01.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
-<style>
-:root{--navy:#191970;--bg:#fff;--soft:#f3f4fb;--ink:#1b1b2f;--mute:#5b5d78;--line:#dfe1f0}
-*{box-sizing:border-box}
-body{margin:0;font:17px/1.6 "Source Sans 3",system-ui,sans-serif;color:var(--ink);background:var(--bg)}
-h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;margin:0 0 .5em;color:var(--navy)}
-h1{font-size:clamp(2.4rem,7vw,4.6rem)}h2{font-size:clamp(1.7rem,4vw,2.6rem)}h3{font-size:1.3rem}
-a{color:var(--navy)}img{max-width:100%;display:block}
-.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-section{padding:64px 0}.soft{background:var(--soft)}
-#top{position:sticky;top:0;z-index:5}
-nav{background:var(--navy);color:#fff}
-nav .wrap{display:flex;align-items:center;gap:14px;min-height:68px}
-nav .logo{margin-right:auto;display:flex;color:#fff;font:700 1.2rem Fraunces,serif;text-decoration:none}nav .logo img{height:46px;width:auto}
-nav .btn{background:#fff;color:var(--navy);border-color:#fff;padding:6px 20px;text-decoration:none}
-.burger{background:none;border:0;cursor:pointer;width:44px;height:44px;display:grid;place-content:center;gap:6px}
-.burger i{display:block;width:26px;height:3px;background:#fff;border-radius:2px;transition:transform .25s,opacity .25s}
-.burger.open i:nth-child(1){transform:translateY(9px) rotate(45deg)}.burger.open i:nth-child(2){opacity:0}.burger.open i:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
-.menu{display:none;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 14px 24px rgba(25,25,112,.18);max-height:calc(100vh - 68px);overflow:auto}
-.menu.open{display:block}
-.menu .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;padding-top:28px;padding-bottom:28px}
-.menu h3{font:600 .95rem "Source Sans 3",sans-serif;color:var(--mute);margin-bottom:6px}
-.menu a{display:block;color:var(--navy);padding:6px 0;font-size:1.15rem;text-decoration:none;font-weight:600}
-.btn{display:inline-block;background:var(--navy);color:#fff;border:2px solid var(--navy);padding:10px 22px;border-radius:999px;font:600 1rem inherit;cursor:pointer;text-decoration:none}
-.btn.ghost{background:#fff;color:var(--navy)}.btn.sm{padding:5px 14px;font-size:.9rem}
-.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
-.hero{background:var(--navy);color:#fff;padding:150px 0}.hero h1,.hero p{color:#fff}
-.hero h1 span{display:block}.hero .btn{background:#fff;color:var(--navy);border-color:#fff}.hero .btn.ghost{background:transparent;color:#fff}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.split img{border-radius:14px;width:100%;aspect-ratio:4/3;object-fit:cover}
-.slides{position:relative;aspect-ratio:16/7;overflow:hidden;background:var(--soft)}
-.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s}.slides img.on{opacity:1}
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
-.card{display:flex;gap:16px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink)}
-.card:hover{border-color:var(--navy)}
-.date{min-width:62px;text-align:center;background:var(--navy);color:#fff;border-radius:10px;padding:8px 4px;font-weight:600;line-height:1.1;align-self:flex-start}
-.date b{display:block;font:700 1.6rem Fraunces,serif}
-.band{background:var(--navy);color:#fff;text-align:center}.band h2,.band p{color:#fff}.band .btn{background:#fff;color:var(--navy)}
-.series{position:relative;color:#fff;background:var(--navy) center/cover}
-.series:before{content:"";position:absolute;inset:0;background:rgba(25,25,112,.78)}
-.series .wrap{position:relative}.series h2,.series p{color:#fff}.series .btn{background:#fff;color:var(--navy)}
-ul.tick{padding-left:20px}
-.circles{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;text-align:center}
-.circle{width:200px;height:200px;border-radius:50%;object-fit:cover;border:4px solid var(--navy);background:var(--soft);margin:0 auto 12px}
-footer{background:var(--navy);color:#fff;padding:48px 0;font-size:.95rem}footer a{color:#fff}footer h3{color:#fff}
-.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}
-.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
-.cal div{min-height:76px;border:1px solid var(--line);border-radius:8px;padding:4px;font-size:.85rem;overflow:hidden}
-.cal .h{min-height:0;border:0;font-weight:600;text-align:center;color:var(--mute)}
-.cal a{display:block;background:var(--navy);color:#fff;border-radius:4px;padding:1px 5px;margin-top:2px;font-size:.78rem;text-decoration:none}
-.calhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
-.read{display:grid;grid-template-columns:150px 1fr;gap:6px 18px;padding:12px 0;border-bottom:1px solid var(--line)}
-.read.now{background:var(--soft);padding-left:10px}.read small{color:var(--mute)}
-input,textarea{width:100%;padding:9px 11px;border:1px solid var(--line);border-radius:8px;font:inherit;margin:3px 0 10px}
-label{font-weight:600;font-size:.9rem}
-.row{border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:14px}
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
-.msg{color:var(--mute)}.pre{white-space:pre-wrap}
-@media(max-width:760px){.split{grid-template-columns:1fr}.read{grid-template-columns:1fr}.cal div{min-height:54px}}
-@media(prefers-reduced-motion:reduce){.slides img{transition:none}}
-</style>
-</head>
-<body>
-<div id="top"><nav><div class="wrap">
-  <a class="logo" href="#/" id="navlogo">St. John</a>
-  <a class="btn sm" href="#/visit">Visit</a>
-  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
-</div></nav>
-<div class="menu" id="menu"><div class="wrap">
-  <div><h3>About</h3><a href="#/about">About Us</a><a href="#/visit">Locations</a></div>
-  <div><h3>Get Involved</h3><a href="#/calendar">Church Calendar</a><a href="#/readings">Sunday Readings</a></div>
-  <div><h3>More</h3><a href="#/app">Get the App</a><a href="#/login" id="navlogin">Admin Login</a></div>
-</div></div></div>
-<main id="app"></main>
-<footer id="foot"></footer>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>St. John Apostolic Faith Mission Church</title>
+  <meta name="description" content="One church worshiping Jesus and making His name known in our city and world.">
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
-<script>
-/* =====  SUPABASE DETAILS  (Project Settings → API) ===== */
-const SUPABASE_URL = "https://rqlnhuoykolcxwdjudqd.supabase.co";
-const SUPABASE_ANON_KEY = "sb_publishable_3k6hlpGDpW6rhNoq4SIiJQ_hNA3lGCr";
-/* ======================================================================== */
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#191970">
+  <link rel="apple-touch-icon" href="icon01.png">
 
-const IMG = "https://cdn.prod.website-files.com/60f9d3ce1fbe59a8e7d9ed87/";
-const CDN2 = "https://cdn.prod.website-files.com/60ec2af571038318963f25b5/";
-// Default text. Anything saved in the database (site_content) overrides these.
-const D = {
-  church_name:"St. John Apostolic Faith Mission Church",
-  logo_img:CDN2+"660d812596bb401456912043_TAS_logo_stacked_white.svg",
-  hero_img:CDN2+"6ace40233e5d4f3acead2830_home-featured.webp",
-  app_logo_img:"",
-  hero1:"We Are", hero2:"One Church", hero3:"Six Congregations", hero4:"St. John Apostolic Faith Mission Church",
-  hero_invite:"You’re invited to join us this Sunday at one of our six locations.",
-  welcome_label:"Welcome to St. John Apostolic Faith Mission Church",
-  welcome_title:"We’re one church with six congregations. Gathering across St. John to love God, the church, the city, and the nations.",
-  welcome_img:CDN2+"6ad120647751cdf3113faece_home-welcome.webp",
-  hap_title:"What’s Happening", hap_text:"Let’s walk with Jesus together! Check out our upcoming classes, events, and more.",
-  series_label:"Current Sermon Series", series_title:"The Letters of John",
-  series_text:"Your faith was meant to be holistic, and your life integrated with Christ. How does Jesus change your daily life?",
-  series_img:IMG+"6a3c2121f1eb28c8a30071c1_media-sermon-series-the-letters-of-john-wide.webp",
-  welcome2_title:"You are welcome here.",
-  welcome2_text:"Are you new to faith? Have you been following Jesus for a while? Or are you somewhere in between? Come learn about Jesus alongside us!",
-  welcome2_img:CDN2+"6ad120647751cdf3113faece_home-welcome.webp",
-  advent_title:"Christmas Eve Services & Advent Resources", advent_text:"Prepare your heart for Christmas at St. John Apostolic Faith Mission Church!",
-  about_hero_img:CDN2+"65fc652edfc07fab12b66c95_3269c58d89f5c1a8dfc03509569f8e21_about-hero-slide-1.webp",
-  about_established:"Established in 2011", about_lead:"We love God, the church, the city, and the nations.",
-  who_title:"One Church, Six Locations",
-  who_text:"St. John Apostolic Faith Mission Church is a New Testament church with six congregations that exists for the supremacy of the name and purpose of Jesus. We believe Christ’s life, death, and resurrection are essential to God’s plan to heal and redeem our fallen world, and we're dedicated to being a part of what He’s doing in our city and throughout the nations.",
-  convictions:"Ruled by God’s Word\nChrist-Centered in Focus\nEmpowered by the Holy Spirit\nReliant on Prayer\nCommitted to Covenant Community\nGospel-Saturated in Discipleship\nDevoted to Equipping the Saints\nRelentless in Mission",
-  faith:"The Bible is the Word of God, fully inspired and without error in the original manuscripts.\nThere is one true, good, and living God who eternally exists in three persons—the Father, Son, and Holy Spirit.\nGod created men and women in His image and created all things for His glory.\nAll have sinned and rebelled against God.\nJesus came to earth, lived a perfect life, and died an atoning death—conquering sin, Satan, and death by His resurrection.\nGod alone is the Author of Salvation.\nThe Holy Spirit gives gifts to those who are in Christ.\nThe church consists of all who have trusted Jesus for their eternal salvation.\nHeaven and hell are real places.\nJesus Christ will one day return to establish His kingdom.",
-  story_img1:CDN2+"64f940e6e5a13d680b94e3b5_about-square-1.webp", story_img2:CDN2+"673b945c0c151992622b0081_about-square-2.webp",
-  story_how_title:"How It Started",
-  story_how:"St. John Apostolic Faith Mission Church began in ",
-  story_grown_title:"How We’ve Grown",
-  story_grown:"St. John Apostolic Faith Mission Church grew to",
-  story_going_title:"Where We’re Going",
-  story_going:"St. John Apostolic Faith Mission Church aims to reach",
-  name_title:"St. John Apostolic Faith Mission Church",
-  name_text:"St. John Apostolic Faith Mission Church........",
-  quote_ref:"Ephesians 3:20–21 ESV",
-  quote:"Now to him who is able to do far more abundantly than all that we ask or think, according to the power at work within us, to him be glory in the church and in Christ Jesus throughout all generations, forever and ever. Amen.",
-  pastor1_name:"Pastor Name", pastor1_role:"Senior Pastor", pastor1_img:"",
-  pastor2_name:"Pastor's Wife Name", pastor2_role:"Pastor’s Wife", pastor2_img:"",
-  location_name:"Mpunga Street Soshanguve South", location_address:"Mpunga Street Soshanguve South", service_times:"Sundays : 11h00 — 14h00",
-  office:" "<a href="https://www.google.com/maps/search/?api=1&query=-25.570222,28.050528" target="_blank">Get Directions</a>" ",
-  facebook:"https://www.facebook.com/", instagram:"https://www.instagram.com/", youtube:"https://www.youtube.com/",
-  android_url:"", ios_url:""
-};
-const FALLBACK_SLIDES = ["68fa56a15d7ac8626153654e_home-carousel-slide-1","68fa56aa91137825dc40f1a9_home-carousel-slide-2","68fa56b14b2f26d56ea2c62d_home-carousel-slide-3","68fa56ba6e6c4fcedde8b5c3_home-carousel-slide-4","68fa56c23a6de895bcd70436_home-carousel-slide-5","68fa56ca9180293a460cd248_home-carousel-slide-6"].map((f,i)=>({image_url:IMG+f+".webp",sort:i}));
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 
-const $ = s => document.querySelector(s);
-const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const li = s => String(s||"").split("\n").filter(Boolean).map(x => `<li>${esc(x)}</li>`).join("");
-const iso = d => d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
-const fmt = (s,o) => new Date(s+"T00:00:00").toLocaleDateString("en-ZA", o||{day:"numeric",month:"long",year:"numeric"});
-const sb = (SUPABASE_URL.startsWith("http") && window.supabase) ? supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
-let C = {...D}, slides = FALLBACK_SLIDES, events = [], readings = [], session = null, calMonth = new Date(), timer;
-
-async function load(){
-  if(!sb) return;
-  try{
-    const [a,b,c,d] = await Promise.all([
-      sb.from("site_content").select("*"), sb.from("events").select("*").order("event_date"),
-      sb.from("slides").select("*").order("sort"), sb.from("readings").select("*").order("sunday_date")]);
-    (a.data||[]).forEach(r => { if(r.value !== null && r.value !== "") C[r.key] = r.value; });
-    events = b.data||[]; readings = d.data||[]; if((c.data||[]).length) slides = c.data;
-    session = (await sb.auth.getSession()).data.session;
-  }catch(e){ console.error(e); }
-}
-
-/* ---------- pages ---------- */
-const eventCard = e => `<a class="card" href="#/event/${e.id}"><div class="date"><b>${new Date(e.event_date+"T00:00:00").getDate()}</b>${fmt(e.event_date,{month:"short"})}</div><div><h3>${esc(e.title)}</h3><span class="msg">${esc(e.short_description)}</span></div></a>`;
-
-function home(){
-  const today = iso(new Date()), up = events.filter(e => e.event_date >= today).slice(0,6);
-  return `
-  <header class="hero" style="background:linear-gradient(rgba(25,25,112,.55),rgba(25,25,112,.75)),url('${esc(C.hero_img)}') center/cover"><div class="wrap"><h1><span>${esc(C.hero1)}</span><span>${esc(C.hero2)}</span><span>${esc(C.hero3)}</span><span>${esc(C.hero4)}</span></h1>
-    <p>${esc(C.hero_invite)}</p><div class="btns"><a class="btn" href="#/visit">Visit</a><a class="btn ghost" href="#/calendar">Get Involved</a></div></div></header>
-  <section><div class="wrap split"><div><p class="msg">${esc(C.welcome_label)}</p><h2>${esc(C.welcome_title)}</h2>
-    <div class="btns"><a class="btn" href="#/visit">Visit</a><a class="btn ghost" href="#/about">About Us</a></div></div>
-    <img src="${esc(C.welcome_img)}" alt="${esc(C.welcome_label)}"></div></section>
-  <div class="slides" id="slides">${slides.map((s,i)=>`<img class="${i?"":"on"}" src="${esc(s.image_url)}" alt="">`).join("")}</div>
-  <section><div class="wrap"><h2>${esc(C.hap_title)}</h2><p>${esc(C.hap_text)}</p>
-    <div class="cards">${up.map(eventCard).join("") || '<p class="msg">New events will appear here soon.</p>'}</div>
-    <div class="btns"><a class="btn" href="#/calendar">Get Involved</a></div></div></section>
-  <section class="series" style="background-image:url('${esc(C.series_img)}')"><div class="wrap"><p>${esc(C.series_label)}</p><h2>${esc(C.series_title)}</h2><p style="max-width:560px">${esc(C.series_text)}</p>
-    <a class="btn" href="#/readings">Explore Series</a></div></section>
-  <section><div class="wrap split"><img src="${esc(C.welcome2_img)}" alt=""><div><h2>${esc(C.welcome2_title)}</h2><p>${esc(C.welcome2_text)}</p>
-    <div class="btns"><a class="btn" href="#/visit">Visit</a><a class="btn ghost" href="#/calendar">Get Involved</a></div></div></div></section>
-  <section class="band"><div class="wrap"><h2>${esc(C.advent_title)}</h2><p>${esc(C.advent_text)}</p><a class="btn" href="#/calendar">Learn more</a></div></section>`;
-}
-
-function about(){
-  const p = (n,r,i) => `<div><img class="circle" src="${esc(i)||"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='200' height='200' fill='%23f3f4fb'/%3E%3C/svg%3E"}" alt="${esc(n)}"><h3>${esc(n)}</h3><span class="msg">${esc(r)}</span></div>`;
-  return `
-  <header class="hero" style="background:linear-gradient(rgba(25,25,112,.8),rgba(25,25,112,.8)),url('${esc(C.about_hero_img)}') center/cover"><div class="wrap"><h1>About ${esc(C.hero4)}</h1><p>${esc(C.about_established)}</p><p>${esc(C.about_lead)}</p></div></header>
-  <section><div class="wrap" style="max-width:780px"><h2>${esc(C.who_title)}</h2><p>${esc(C.who_text)}</p></div></section>
-  <section class="soft"><div class="wrap"><h2 style="text-align:center">Our Pastors</h2><div class="circles">${p(C.pastor1_name,C.pastor1_role,C.pastor1_img)}${p(C.pastor2_name,C.pastor2_role,C.pastor2_img)}</div></div></section>
-  <section><div class="wrap split"><div><h2>Our Foundational Beliefs</h2><h3>Our Convictions</h3><ul class="tick">${li(C.convictions)}</ul></div><div><h3>Affirmation of Faith</h3><ul class="tick">${li(C.faith)}</ul></div></div></section>
-  <section class="soft"><div class="wrap"><h2>The Story of ${esc(C.hero4)}</h2>
-    <div class="split" style="margin-bottom:30px"><img src="${esc(C.story_img1)}" alt=""><img src="${esc(C.story_img2)}" alt=""></div>
-    <h3>${esc(C.story_how_title)}</h3><p>${esc(C.story_how)}</p><h3>${esc(C.story_grown_title)}</h3><p>${esc(C.story_grown)}</p><h3>${esc(C.story_going_title)}</h3><p>${esc(C.story_going)}</p></div></section>
-  <section><div class="wrap" style="max-width:780px"><h2>${esc(C.name_title)}</h2><p class="pre">${esc(C.name_text)}</p><h3>${esc(C.quote_ref)}</h3><blockquote>${esc(C.quote)}</blockquote></div></section>`;
-}
-
-const visit = () => `<section><div class="wrap" style="max-width:780px"><h1>Visit Us</h1><h2>${esc(C.location_name)}</h2><p>${esc(C.location_address)}</p><p>${esc(C.service_times)}</p>
-  <p>${esc(C.hero_invite)}</p><div class="btns"><a class="btn" href="mailto:${esc(C.email)}">Contact us</a></div></div></section>`;
-
-function eventPage(id){
-  const e = events.find(x => String(x.id) === String(id));
-  if(!e) return `<section><div class="wrap"><h2>Event not found</h2><a href="#/calendar">Back to calendar</a></div></section>`;
-  return `<section><div class="wrap" style="max-width:780px"><a href="#/calendar">← Back to calendar</a><p class="msg" style="margin-top:20px">${fmt(e.event_date,{weekday:"long",day:"numeric",month:"long",year:"numeric"})}</p>
-    <h1>${esc(e.title)}</h1>${e.image_url?`<img src="${esc(e.image_url)}" alt="" style="border-radius:14px;margin:20px 0">`:""}<p class="pre">${esc(e.full_description||e.short_description)}</p></div></section>`;
-}
-
-function calendar(){
-  // Only a one-year window is available: 6 months back to 6 months ahead.
-  const now = new Date(), min = new Date(now.getFullYear(), now.getMonth()-6, 1), max = new Date(now.getFullYear(), now.getMonth()+6, 1);
-  if(calMonth < min) calMonth = min; if(calMonth > max) calMonth = max;
-  const y = calMonth.getFullYear(), m = calMonth.getMonth(), first = new Date(y,m,1).getDay(), days = new Date(y,m+1,0).getDate();
-  let cells = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].map(d=>`<div class="h">${d}</div>`).join("") + "<div style='border:0'></div>".repeat(first);
-  for(let d=1; d<=days; d++){
-    const key = iso(new Date(y,m,d));
-    cells += `<div><b>${d}</b>${events.filter(e=>e.event_date===key).map(e=>`<a href="#/event/${e.id}">${esc(e.title)}</a>`).join("")}</div>`;
-  }
-  return `<section><div class="wrap"><h1>Church Calendar</h1><div class="calhead"><button class="btn sm" data-act="prev" ${calMonth<=min?"disabled":""}>← Previous</button>
-    <h2 style="margin:0">${calMonth.toLocaleDateString("en-ZA",{month:"long",year:"numeric"})}</h2><button class="btn sm" data-act="next" ${calMonth>=max?"disabled":""}>Next →</button></div>
-    <div class="cal">${cells}</div><p class="msg">Showing events from ${min.toLocaleDateString("en-ZA",{month:"long",year:"numeric"})} to ${max.toLocaleDateString("en-ZA",{month:"long",year:"numeric"})}.</p></div></section>`;
-}
-
-function readingsPage(){
-  const today = iso(new Date()); let marked = false;
-  return `<section><div class="wrap" style="max-width:780px"><h1>${esc(C.series_title)}</h1><p>${esc(C.series_text)}</p><h2>Sunday readings</h2>
-  ${readings.map(r => { const now = !marked && r.sunday_date >= today; if(now) marked = true;
-    return `<div class="read ${now?"now":""}"><div><b>${fmt(r.sunday_date,{day:"numeric",month:"short",year:"numeric"})}</b>${now?"<br><small>This Sunday</small>":""}</div><div>${esc(r.scripture)}${r.notes?`<br><small>${esc(r.notes)}</small>`:""}</div></div>`; }).join("") || '<p class="msg">Readings will appear here.</p>'}
-  </div></section>`;
-}
-
-const appPage = () => { const b=(u,t)=>u?`<a class="btn" href="${esc(u)}">${t}</a>`:`<span class="btn ghost" style="opacity:.5">${t} — coming soon</span>`;
-  return `<section><div class="wrap" style="max-width:780px"><h1>Get the app</h1><p>Events, the calendar, and Sunday readings in your pocket.</p><div class="btns">${b(C.android_url,"Download for Android")}${b(C.ios_url,"Download for iPhone")}</div></div></section>`; };
-
-/* ---------- login + admin ---------- */
-const loginPage = () => `<section><div class="wrap" style="max-width:420px"><h1>Admin login</h1>
-  <label>Email</label><input id="em" type="email" autocomplete="username"><label>Password</label><input id="pw" type="password" autocomplete="current-password">
-  <button class="btn" data-act="login">Log in</button> <p class="msg" id="lmsg"></p></div></section>`;
-
-const TB = { events:[["title"],["event_date","date"],["short_description","area"],["full_description","area"],["image_url","img"]],
-             slides:[["image_url","img"],["sort","number"]], readings:[["sunday_date","date"],["scripture"],["notes","area"]] };
-const ORDER = {events:"event_date", slides:"sort", readings:"sunday_date"};
-const field = (n,type,v,pre="") => {
-  const val = esc(v), attr = `data-f="${pre}${n}"`;
-  const lab = `<label>${n.replace(/_/g," ")}</label>`;
-  if(type==="area") return `${lab}<textarea rows="4" ${attr}>${val}</textarea>`;
-  if(type==="img") return `${lab}<input ${attr} value="${val}" placeholder="Image link or upload below"><input type="file" accept="image/*,video/*" data-up>`;
-  return `${lab}<input ${attr} type="${type||"text"}" value="${val}">`;
-};
-async function adminPage(tab="texts"){
-  if(!sb || !session) return loginPage();
-  const tabs = ["texts","events","slides","readings"].map(t=>`<button class="btn sm ${t===tab?"":"ghost"}" data-act="tab" data-t="${t}">${t==="texts"?"Page text & images":t[0].toUpperCase()+t.slice(1)}</button>`).join("");
-  let body = "";
-  if(tab==="texts"){
-    body = Object.keys(D).map(k => field(k, /_img$/.test(k)?"img":(D[k].length>90?"area":"text"), C[k], "t:")).join("") + `<button class="btn" data-act="savetexts">Save all text</button>`;
-  } else {
-    const {data} = await sb.from(tab).select("*").order(ORDER[tab]);
-    body = (data||[]).map(r => `<div class="row" data-id="${r.id}">${TB[tab].map(([n,t])=>field(n,t,r[n])).join("")}<button class="btn sm" data-act="saverow" data-tb="${tab}">Save</button> <button class="btn sm ghost" data-act="delrow" data-tb="${tab}">Delete</button></div>`).join("")
-      + `<div class="row" data-id="">${TB[tab].map(([n,t])=>field(n,t,"")).join("")}<button class="btn sm" data-act="saverow" data-tb="${tab}">Add new</button></div>`;
-  }
-  return `<section><div class="wrap" style="max-width:820px"><h1>Admin</h1><p><button class="btn sm ghost" data-act="logout">Log out</button></p><div class="tabs">${tabs}</div>${body}</div></section>`;
-}
-
-/* ---------- router ---------- */
-async function route(){
-  const [ , page, arg ] = (location.hash || "#/").slice(1).split("/");
-  clearInterval(timer);
-  let html;
-  switch(page){
-    case "about": html = about(); break; case "visit": html = visit(); break;
-    case "event": html = eventPage(arg); break; case "calendar": html = calendar(); break;
-    case "readings": html = readingsPage(); break; case "app": html = appPage(); break;
-    case "login": html = session ? await adminPage() : loginPage(); break;
-    case "admin": html = await adminPage(arg||"texts"); break;
-    default: html = home();
-  }
-  $("#app").innerHTML = html; window.scrollTo(0,0);
-  const imgs = document.querySelectorAll("#slides img");
-  if(imgs.length > 1){ let i = 0; timer = setInterval(()=>{ imgs[i].classList.remove("on"); i=(i+1)%imgs.length; imgs[i].classList.add("on"); }, 4500); }
-  $("#navlogin").textContent = session ? "Admin" : "Admin Login"; $("#navlogin").href = session ? "#/admin" : "#/login";
-  $("#navlogo").innerHTML = C.logo_img ? `<img src="${esc(C.logo_img)}" alt="${esc(C.hero4)}">` : esc(C.hero4);
-  $("#menu").classList.remove("open"); $("#burger").classList.remove("open");
-  $("#foot").innerHTML = `<div class="wrap fgrid"><div>${C.logo_img?`<img src="${esc(C.logo_img)}" alt="${esc(C.hero4)}" style="height:56px;margin-bottom:12px">`:`<h3>${esc(C.hero4)}</h3>`}<p>${esc(C.office)}</p><p><a href="mailto:${esc(C.email)}">${esc(C.email)}</a><br><a href="tel:${esc(C.phone)}">${esc(C.phone)}</a></p></div>
-    <div><h3>Location</h3><p>${esc(C.location_name)}<br>${esc(C.location_address)}</p></div>
-    <div><h3>Follow us</h3><p><a href="${esc(C.facebook)}">Facebook</a><br><a href="${esc(C.instagram)}">Instagram</a><br><a href="${esc(C.youtube)}">YouTube</a></p><p><a href="#/app">Download the app</a></p></div></div>
-    <div class="wrap"><p>© ${new Date().getFullYear()} ${esc(C.hero4)}</p></div>`;
-}
-
-/* ---------- actions ---------- */
-document.addEventListener("click", async ev => {
-  const b = ev.target.closest("[data-act]"); if(!b) return; const a = b.dataset.act;
-  if(a==="prev"){ calMonth = new Date(calMonth.getFullYear(), calMonth.getMonth()-1, 1); return route(); }
-  if(a==="next"){ calMonth = new Date(calMonth.getFullYear(), calMonth.getMonth()+1, 1); return route(); }
-  if(a==="tab") return location.hash = "#/admin/"+b.dataset.t;
-  if(a==="login"){
-    if(!sb) return $("#lmsg").textContent = "Supabase is not connected yet. Check the keys in index.html.";
-    const {data,error} = await sb.auth.signInWithPassword({email:$("#em").value.trim(), password:$("#pw").value});
-    if(error) return $("#lmsg").textContent = "Login failed: " + error.message;
-    session = data.session; return location.hash = "#/admin";
-  }
-  if(a==="logout"){ await sb.auth.signOut(); session = null; return location.hash = "#/"; }
-  if(a==="savetexts"){
-    const rows = [...document.querySelectorAll("[data-f^='t:']")].map(i => ({key:i.dataset.f.slice(2), value:i.value}));
-    const {error} = await sb.from("site_content").upsert(rows); if(error) return alert("Save failed: "+error.message);
-    await load(); alert("Saved."); return route();
-  }
-  if(a==="saverow"||a==="delrow"){
-    const row = b.closest(".row"), id = row.dataset.id, tb = b.dataset.tb;
-    if(a==="delrow"){ if(!confirm("Delete this item?")) return; await sb.from(tb).delete().eq("id",id); }
-    else {
-      const o = {}; row.querySelectorAll("[data-f]").forEach(i => o[i.dataset.f] = i.value===""?null:i.value);
-      const {error} = id ? await sb.from(tb).update(o).eq("id",id) : await sb.from(tb).insert(o);
-      if(error) return alert("Save failed: "+error.message);
+  <style>
+    /* ---------- colours I use everywhere ---------- */
+    :root {
+      --navy: #191970;
+      --bg: #fff;
+      --soft: #f3f4fb;
+      --ink: #1b1b2f;
+      --mute: #5b5d78;
+      --line: #dfe1f0;
     }
-    await load(); return route();
-  }
-});
-document.addEventListener("change", async ev => {
-  const f = ev.target; if(!f.matches("[data-up]") || !f.files[0]) return;
-  const file = f.files[0], path = Date.now()+"-"+file.name.replace(/[^\w.-]/g,"_");
-  const {error} = await sb.storage.from("media").upload(path, file);
-  if(error) return alert("Upload failed: "+error.message);
-  f.previousElementSibling.value = sb.storage.from("media").getPublicUrl(path).data.publicUrl;
-  alert("Uploaded. Now press Save.");
-});
-$("#burger").addEventListener("click", () => { const o = $("#menu").classList.toggle("open"); $("#burger").classList.toggle("open", o); $("#burger").setAttribute("aria-expanded", o); });
-document.addEventListener("click", e => { if(!e.target.closest("#top")){ $("#menu").classList.remove("open"); $("#burger").classList.remove("open"); } });
-window.addEventListener("hashchange", route);
-load().then(route);
-</script>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font: 17px/1.6 "Source Sans 3", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+    }
+
+    h1, h2, h3 {
+      font-family: Fraunces, Georgia, serif;
+      line-height: 1.15;
+      margin: 0 0 .5em;
+      color: var(--navy);
+    }
+
+    h1 { font-size: clamp(2.4rem, 7vw, 4.6rem); }
+    h2 { font-size: clamp(1.7rem, 4vw, 2.6rem); }
+    h3 { font-size: 1.3rem; }
+
+    a { color: var(--navy); }
+    img { max-width: 100%; display: block; }
+
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section { padding: 64px 0; }
+    .soft { background: var(--soft); }
+
+    /* ---------- top bar ---------- */
+    #top {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+
+    nav {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    nav .wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-height: 68px;
+    }
+
+    nav .logo {
+      margin-right: auto;
+      display: flex;
+      color: #fff;
+      font: 700 1.2rem Fraunces, serif;
+      text-decoration: none;
+    }
+
+    nav .logo img {
+      height: 46px;
+      width: auto;
+    }
+
+    nav .btn {
+      background: #fff;
+      color: var(--navy);
+      border-color: #fff;
+      padding: 6px 20px;
+      text-decoration: none;
+    }
+
+    /* the three-line menu button */
+    .burger {
+      background: none;
+      border: 0;
+      cursor: pointer;
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-content: center;
+      gap: 6px;
+    }
+
+    .burger i {
+      display: block;
+      width: 26px;
+      height: 3px;
+      background: #fff;
+      border-radius: 2px;
+      transition: transform .25s, opacity .25s;
+    }
+
+    /* turns into an X when the menu is open */
+    .burger.open i:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    .burger.open i:nth-child(2) { opacity: 0; }
+    .burger.open i:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+    .menu {
+      display: none;
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 14px 24px rgba(25, 25, 112, .18);
+      max-height: calc(100vh - 68px);
+      overflow: auto;
+    }
+
+    .menu.open { display: block; }
+
+    .menu .wrap {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 24px;
+      padding-top: 28px;
+      padding-bottom: 28px;
+    }
+
+    .menu h3 {
+      font: 600 .95rem "Source Sans 3", sans-serif;
+      color: var(--mute);
+      margin-bottom: 6px;
+    }
+
+    .menu a {
+      display: block;
+      color: var(--navy);
+      padding: 6px 0;
+      font-size: 1.15rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* ---------- buttons ---------- */
+    .btn {
+      display: inline-block;
+      background: var(--navy);
+      color: #fff;
+      border: 2px solid var(--navy);
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn.ghost { background: #fff; color: var(--navy); }
+    .btn.sm { padding: 5px 14px; font-size: .9rem; }
+
+    .btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    /* ---------- big top banner ---------- */
+    .hero {
+      background: var(--navy);
+      color: #fff;
+      padding: 150px 0;
+    }
+
+    .hero h1, .hero p { color: #fff; }
+    .hero h1 span { display: block; }
+    .hero .btn { background: #fff; color: var(--navy); border-color: #fff; }
+    .hero .btn.ghost { background: transparent; color: #fff; }
+
+    /* text on one side, picture on the other */
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .split img {
+      border-radius: 14px;
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+
+    /* picture slideshow */
+    .slides {
+      position: relative;
+      aspect-ratio: 16/7;
+      overflow: hidden;
+      background: var(--soft);
+    }
+
+    .slides img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s;
+    }
+
+    .slides img.on { opacity: 1; }
+
+    /* ---------- event cards ---------- */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      display: flex;
+      gap: 16px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px;
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    .card:hover { border-color: var(--navy); }
+
+    .date {
+      min-width: 62px;
+      text-align: center;
+      background: var(--navy);
+      color: #fff;
+      border-radius: 10px;
+      padding: 8px 4px;
+      font-weight: 600;
+      line-height: 1.1;
+      align-self: flex-start;
+    }
+
+    .date b {
+      display: block;
+      font: 700 1.6rem Fraunces, serif;
+    }
+
+    /* ---------- coloured bands ---------- */
+    .band {
+      background: var(--navy);
+      color: #fff;
+      text-align: center;
+    }
+
+    .band h2, .band p { color: #fff; }
+    .band .btn { background: #fff; color: var(--navy); }
+
+    .series {
+      position: relative;
+      color: #fff;
+      background: var(--navy) center/cover;
+    }
+
+    /* dark blue layer on top of the series picture */
+    .series:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(25, 25, 112, .78);
+    }
+
+    .series .wrap { position: relative; }
+    .series h2, .series p { color: #fff; }
+    .series .btn { background: #fff; color: var(--navy); }
+
+    ul.tick { padding-left: 20px; }
+
+    /* pastors */
+    .circles {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .circle {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--navy);
+      background: var(--soft);
+      margin: 0 auto 12px;
+    }
+
+    /* ---------- footer ---------- */
+    footer {
+      background: var(--navy);
+      color: #fff;
+      padding: 48px 0;
+      font-size: .95rem;
+    }
+
+    footer a { color: #fff; }
+    footer h3 { color: #fff; }
+
+    .fgrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 28px;
+    }
+
+    /* ---------- calendar ---------- */
+    .cal {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+    }
+
+    .cal div {
+      min-height: 76px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 4px;
+      font-size: .85rem;
+      overflow: hidden;
+    }
+
+    .cal .h {
+      min-height: 0;
+      border: 0;
+      font-weight: 600;
+      text-align: center;
+      color: var(--mute);
+    }
+
+    .cal a {
+      display: block;
+      background: var(--navy);
+      color: #fff;
+      border-radius: 4px;
+      padding: 1px 5px;
+      margin-top: 2px;
+      font-size: .78rem;
+      text-decoration: none;
+    }
+
+    .calhead {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    /* ---------- sunday readings ---------- */
+    .read {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 6px 18px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .read.now {
+      background: var(--soft);
+      padding-left: 10px;
+    }
+
+    .read small { color: var(--mute); }
+
+    /* ---------- admin forms ---------- */
+    input, textarea {
+      width: 100%;
+      padding: 9px 11px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font: inherit;
+      margin: 3px 0 10px;
+    }
+
+    label {
+      font-weight: 600;
+      font-size: .9rem;
+    }
+
+    .row {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 14px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+
+    .msg { color: var(--mute); }
+    .pre { white-space: pre-wrap; }
+
+    /* phones */
+    @media (max-width: 760px) {
+      .split { grid-template-columns: 1fr; }
+      .read { grid-template-columns: 1fr; }
+      .cal div { min-height: 54px; }
+    }
+
+    /* people who don't like animation */
+    @media (prefers-reduced-motion: reduce) {
+      .slides img { transition: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- top bar + dropdown menu -->
+  <div id="top">
+    <nav>
+      <div class="wrap">
+        <a class="logo" href="#/" id="navlogo">St. John</a>
+        <a class="btn sm" href="#/visit">Visit</a>
+        <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+          <i></i><i></i><i></i>
+        </button>
+      </div>
+    </nav>
+
+    <div class="menu" id="menu">
+      <div class="wrap">
+        <div>
+          <h3>About</h3>
+          <a href="#/about">About Us</a>
+          <a href="#/visit">Locations</a>
+        </div>
+        <div>
+          <h3>Get Involved</h3>
+          <a href="#/calendar">Church Calendar</a>
+          <a href="#/readings">Sunday Readings</a>
+        </div>
+        <div>
+          <h3>More</h3>
+          <a href="#/app">Get the App</a>
+          <a href="#/login" id="navlogin">Admin Login</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- every page gets drawn in here -->
+  <main id="app"></main>
+  <footer id="foot"></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script>
+    // ---------- my Supabase details (Project Settings → API) ----------
+    const SUPABASE_URL = "https://rqlnhuoykolcxwdjudqd.supabase.co";
+    const SUPABASE_KEY = "sb_publishable_3k6hlpGDpW6rhNoq4SIiJQ_hNA3lGCr";
+
+    const imgHost = "https://cdn.prod.website-files.com/60f9d3ce1fbe59a8e7d9ed87/";
+    const cdnHost = "https://cdn.prod.website-files.com/60ec2af571038318963f25b5/";
+
+    // The words and pictures the site starts with.
+    // Anything I save in the admin page replaces these.
+    const defaultText = {
+      church_name: "St. John Apostolic Faith Mission Church",
+      logo_img: cdnHost + "660d812596bb401456912043_TAS_logo_stacked_white.svg",
+      hero_img: cdnHost + "6ace40233e5d4f3acead2830_home-featured.webp",
+      app_logo_img: "",
+
+      hero1: "We Are",
+      hero2: "One Church",
+      hero3: "Six Congregations",
+      hero4: "St. John Apostolic Faith Mission Church",
+      hero_invite: "You’re invited to join us this Sunday at one of our six locations.",
+
+      welcome_label: "Welcome to St. John Apostolic Faith Mission Church",
+      welcome_title: "We’re one church with six congregations. Gathering across St. John to love God, the church, the city, and the nations.",
+      welcome_img: cdnHost + "6ad120647751cdf3113faece_home-welcome.webp",
+
+      hap_title: "What’s Happening",
+      hap_text: "Let’s walk with Jesus together! Check out our upcoming classes, events, and more.",
+
+      series_label: "Current Sermon Series",
+      series_title: "The Letters of John",
+      series_text: "Your faith was meant to be holistic, and your life integrated with Christ. How does Jesus change your daily life?",
+      series_img: imgHost + "6a3c2121f1eb28c8a30071c1_media-sermon-series-the-letters-of-john-wide.webp",
+
+      welcome2_title: "You are welcome here.",
+      welcome2_text: "Are you new to faith? Have you been following Jesus for a while? Or are you somewhere in between? Come learn about Jesus alongside us!",
+      welcome2_img: cdnHost + "6ad120647751cdf3113faece_home-welcome.webp",
+
+      advent_title: "Christmas Eve Services & Advent Resources",
+      advent_text: "Prepare your heart for Christmas at St. John Apostolic Faith Mission Church!",
+
+      about_hero_img: cdnHost + "65fc652edfc07fab12b66c95_3269c58d89f5c1a8dfc03509569f8e21_about-hero-slide-1.webp",
+      about_established: "Established in 2011",
+      about_lead: "We love God, the church, the city, and the nations.",
+
+      who_title: "One Church, Six Locations",
+      who_text: "St. John Apostolic Faith Mission Church is a New Testament church with six congregations that exists for the supremacy of the name and purpose of Jesus. We believe Christ’s life, death, and resurrection are essential to God’s plan to heal and redeem our fallen world, and we're dedicated to being a part of what He’s doing in our city and throughout the nations.",
+
+      convictions: "Ruled by God’s Word\nChrist-Centered in Focus\nEmpowered by the Holy Spirit\nReliant on Prayer\nCommitted to Covenant Community\nGospel-Saturated in Discipleship\nDevoted to Equipping the Saints\nRelentless in Mission",
+      faith: "The Bible is the Word of God, fully inspired and without error in the original manuscripts.\nThere is one true, good, and living God who eternally exists in three persons—the Father, Son, and Holy Spirit.\nGod created men and women in His image and created all things for His glory.\nAll have sinned and rebelled against God.\nJesus came to earth, lived a perfect life, and died an atoning death—conquering sin, Satan, and death by His resurrection.\nGod alone is the Author of Salvation.\nThe Holy Spirit gives gifts to those who are in Christ.\nThe church consists of all who have trusted Jesus for their eternal salvation.\nHeaven and hell are real places.\nJesus Christ will one day return to establish His kingdom.",
+
+      story_img1: cdnHost + "64f940e6e5a13d680b94e3b5_about-square-1.webp",
+      story_img2: cdnHost + "673b945c0c151992622b0081_about-square-2.webp",
+      story_how_title: "How It Started",
+      story_how: "St. John Apostolic Faith Mission Church began in ",
+      story_grown_title: "How We’ve Grown",
+      story_grown: "St. John Apostolic Faith Mission Church grew to",
+      story_going_title: "Where We’re Going",
+      story_going: "St. John Apostolic Faith Mission Church aims to reach",
+
+      name_title: "St. John Apostolic Faith Mission Church",
+      name_text: "St. John Apostolic Faith Mission Church........",
+      quote_ref: "Ephesians 3:20–21 ESV",
+      quote: "Now to him who is able to do far more abundantly than all that we ask or think, according to the power at work within us, to him be glory in the church and in Christ Jesus throughout all generations, forever and ever. Amen.",
+
+      pastor1_name: "Pastor Name",
+      pastor1_role: "Senior Pastor",
+      pastor1_img: "",
+      pastor2_name: "Pastor's Wife Name",
+      pastor2_role: "Pastor’s Wife",
+      pastor2_img: "",
+
+      location_name: "Mpunga Street Soshanguve South",
+      location_address: "Mpunga Street Soshanguve South",
+      service_times: "Sundays : 11h00 — 14h00",
+      email: "",
+      phone: "",
+      office: " ",
+
+      facebook: "https://www.facebook.com/",
+      instagram: "https://www.instagram.com/",
+      youtube: "https://www.youtube.com/",
+      android_url: "",
+      ios_url: ""
+    };
+
+    // pictures for the slideshow if I haven't added any in admin yet
+    const fallbackSlideNames = [
+      "68fa56a15d7ac8626153654e_home-carousel-slide-1",
+      "68fa56aa91137825dc40f1a9_home-carousel-slide-2",
+      "68fa56b14b2f26d56ea2c62d_home-carousel-slide-3",
+      "68fa56ba6e6c4fcedde8b5c3_home-carousel-slide-4",
+      "68fa56c23a6de895bcd70436_home-carousel-slide-5",
+      "68fa56ca9180293a460cd248_home-carousel-slide-6"
+    ];
+    const fallbackSlides = fallbackSlideNames.map((name, number) => {
+      return { image_url: imgHost + name + ".webp", sort: number };
+    });
+
+
+    // ---------- small helper functions ----------
+
+    // grab something from the page
+    function pick(selector) {
+      return document.querySelector(selector);
+    }
+
+    // makes text safe to put inside HTML (stops weird characters breaking the page)
+    function safe(text) {
+      const swaps = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
+      return String(text ?? "").replace(/[&<>"']/g, character => swaps[character]);
+    }
+
+    // turns lines of text into a bullet list
+    function makeList(text) {
+      return String(text || "")
+        .split("\n")
+        .filter(Boolean)
+        .map(line => `<li>${safe(line)}</li>`)
+        .join("");
+    }
+
+    // a date turned into 2026-11-17 so dates are easy to compare
+    function toDateKey(date) {
+      const month = String(date.getMonth() + 1).padStart(2, "0");
+      const day = String(date.getDate()).padStart(2, "0");
+      return date.getFullYear() + "-" + month + "-" + day;
+    }
+
+    // nice looking date, South African style
+    function formatDate(dateText, options) {
+      const defaultLook = { day: "numeric", month: "long", year: "numeric" };
+      return new Date(dateText + "T00:00:00").toLocaleDateString("en-ZA", options || defaultLook);
+    }
+
+
+    // ---------- things the page remembers ----------
+    const db = (SUPABASE_URL.startsWith("http") && window.supabase)
+      ? supabase.createClient(SUPABASE_URL, SUPABASE_KEY)
+      : null;
+
+    let site = { ...defaultText };      // the words/pictures being shown right now
+    let slides = fallbackSlides;
+    let events = [];
+    let readings = [];
+    let session = null;                 // filled in when the admin logs in
+    let calendarMonth = new Date();
+    let slideTimer;
+
+
+    // get everything from Supabase
+    async function loadEverything() {
+      if (!db) return;
+
+      try {
+        const [texts, eventRows, slideRows, readingRows] = await Promise.all([
+          db.from("site_content").select("*"),
+          db.from("events").select("*").order("event_date"),
+          db.from("slides").select("*").order("sort"),
+          db.from("readings").select("*").order("sunday_date")
+        ]);
+
+        // saved text replaces the starting text (empty ones are ignored)
+        (texts.data || []).forEach(row => {
+          if (row.value !== null && row.value !== "") {
+            site[row.key] = row.value;
+          }
+        });
+
+        events = eventRows.data || [];
+        readings = readingRows.data || [];
+        if ((slideRows.data || []).length) {
+          slides = slideRows.data;
+        }
+
+        session = (await db.auth.getSession()).data.session;
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+
+    // ---------- the pages ----------
+
+    // one event card (used on home page)
+    function eventCard(event) {
+      const dayNumber = new Date(event.event_date + "T00:00:00").getDate();
+      const monthName = formatDate(event.event_date, { month: "short" });
+
+      return `
+        <a class="card" href="#/event/${event.id}">
+          <div class="date"><b>${dayNumber}</b>${monthName}</div>
+          <div>
+            <h3>${safe(event.title)}</h3>
+            <span class="msg">${safe(event.short_description)}</span>
+          </div>
+        </a>`;
+    }
+
+    function homePage() {
+      const today = toDateKey(new Date());
+      const comingUp = events.filter(event => event.event_date >= today).slice(0, 6);
+
+      const slideImages = slides.map((slide, number) => {
+        return `<img class="${number ? "" : "on"}" src="${safe(slide.image_url)}" alt="">`;
+      }).join("");
+
+      const eventCards = comingUp.map(eventCard).join("")
+        || '<p class="msg">New events will appear here soon.</p>';
+
+      return `
+        <header class="hero" style="background:linear-gradient(rgba(25,25,112,.55),rgba(25,25,112,.75)),url('${safe(site.hero_img)}') center/cover">
+          <div class="wrap">
+            <h1>
+              <span>${safe(site.hero1)}</span>
+              <span>${safe(site.hero2)}</span>
+              <span>${safe(site.hero3)}</span>
+              <span>${safe(site.hero4)}</span>
+            </h1>
+            <p>${safe(site.hero_invite)}</p>
+            <div class="btns">
+              <a class="btn" href="#/visit">Visit</a>
+              <a class="btn ghost" href="#/calendar">Get Involved</a>
+            </div>
+          </div>
+        </header>
+
+        <section>
+          <div class="wrap split">
+            <div>
+              <p class="msg">${safe(site.welcome_label)}</p>
+              <h2>${safe(site.welcome_title)}</h2>
+              <div class="btns">
+                <a class="btn" href="#/visit">Visit</a>
+                <a class="btn ghost" href="#/about">About Us</a>
+              </div>
+            </div>
+            <img src="${safe(site.welcome_img)}" alt="${safe(site.welcome_label)}">
+          </div>
+        </section>
+
+        <div class="slides" id="slides">${slideImages}</div>
+
+        <section>
+          <div class="wrap">
+            <h2>${safe(site.hap_title)}</h2>
+            <p>${safe(site.hap_text)}</p>
+            <div class="cards">${eventCards}</div>
+            <div class="btns"><a class="btn" href="#/calendar">Get Involved</a></div>
+          </div>
+        </section>
+
+        <section class="series" style="background-image:url('${safe(site.series_img)}')">
+          <div class="wrap">
+            <p>${safe(site.series_label)}</p>
+            <h2>${safe(site.series_title)}</h2>
+            <p style="max-width:560px">${safe(site.series_text)}</p>
+            <a class="btn" href="#/readings">Explore Series</a>
+          </div>
+        </section>
+
+        <section>
+          <div class="wrap split">
+            <img src="${safe(site.welcome2_img)}" alt="">
+            <div>
+              <h2>${safe(site.welcome2_title)}</h2>
+              <p>${safe(site.welcome2_text)}</p>
+              <div class="btns">
+                <a class="btn" href="#/visit">Visit</a>
+                <a class="btn ghost" href="#/calendar">Get Involved</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="band">
+          <div class="wrap">
+            <h2>${safe(site.advent_title)}</h2>
+            <p>${safe(site.advent_text)}</p>
+            <a class="btn" href="#/calendar">Learn more</a>
+          </div>
+        </section>`;
+    }
+
+
+    function aboutPage() {
+      // grey circle shown when a pastor has no photo yet
+      const emptyPhoto = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='200' height='200' fill='%23f3f4fb'/%3E%3C/svg%3E";
+
+      function pastorBlock(name, role, photo) {
+        return `
+          <div>
+            <img class="circle" src="${safe(photo) || emptyPhoto}" alt="${safe(name)}">
+            <h3>${safe(name)}</h3>
+            <span class="msg">${safe(role)}</span>
+          </div>`;
+      }
+
+      return `
+        <header class="hero" style="background:linear-gradient(rgba(25,25,112,.8),rgba(25,25,112,.8)),url('${safe(site.about_hero_img)}') center/cover">
+          <div class="wrap">
+            <h1>About ${safe(site.hero4)}</h1>
+            <p>${safe(site.about_established)}</p>
+            <p>${safe(site.about_lead)}</p>
+          </div>
+        </header>
+
+        <section>
+          <div class="wrap" style="max-width:780px">
+            <h2>${safe(site.who_title)}</h2>
+            <p>${safe(site.who_text)}</p>
+          </div>
+        </section>
+
+        <section class="soft">
+          <div class="wrap">
+            <h2 style="text-align:center">Our Pastors</h2>
+            <div class="circles">
+              ${pastorBlock(site.pastor1_name, site.pastor1_role, site.pastor1_img)}
+              ${pastorBlock(site.pastor2_name, site.pastor2_role, site.pastor2_img)}
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="wrap split">
+            <div>
+              <h2>Our Foundational Beliefs</h2>
+              <h3>Our Convictions</h3>
+              <ul class="tick">${makeList(site.convictions)}</ul>
+            </div>
+            <div>
+              <h3>Affirmation of Faith</h3>
+              <ul class="tick">${makeList(site.faith)}</ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="soft">
+          <div class="wrap">
+            <h2>The Story of ${safe(site.hero4)}</h2>
+            <div class="split" style="margin-bottom:30px">
+              <img src="${safe(site.story_img1)}" alt="">
+              <img src="${safe(site.story_img2)}" alt="">
+            </div>
+            <h3>${safe(site.story_how_title)}</h3>
+            <p>${safe(site.story_how)}</p>
+            <h3>${safe(site.story_grown_title)}</h3>
+            <p>${safe(site.story_grown)}</p>
+            <h3>${safe(site.story_going_title)}</h3>
+            <p>${safe(site.story_going)}</p>
+          </div>
+        </section>
+
+        <section>
+          <div class="wrap" style="max-width:780px">
+            <h2>${safe(site.name_title)}</h2>
+            <p class="pre">${safe(site.name_text)}</p>
+            <h3>${safe(site.quote_ref)}</h3>
+            <blockquote>${safe(site.quote)}</blockquote>
+          </div>
+        </section>`;
+    }
+
+
+    function visitPage() {
+      // church location on Google Maps
+      const mapsLink = "https://www.google.com/maps/search/?api=1&query=-25.570222,28.050528";
+
+      return `
+        <section>
+          <div class="wrap" style="max-width:780px">
+            <h1>Visit Us</h1>
+            <h2>${safe(site.location_name)}</h2>
+            <p>${safe(site.location_address)}</p>
+            <p>${safe(site.service_times)}</p>
+            <p>${safe(site.hero_invite)}</p>
+            <div class="btns">
+              <a class="btn" href="${mapsLink}" target="_blank" rel="noopener">Get Directions</a>
+              <a class="btn ghost" href="mailto:${safe(site.email)}">Contact us</a>
+            </div>
+          </div>
+        </section>`;
+    }
+
+
+    function eventPage(eventId) {
+      const event = events.find(item => String(item.id) === String(eventId));
+
+      if (!event) {
+        return `
+          <section>
+            <div class="wrap">
+              <h2>Event not found</h2>
+              <a href="#/calendar">Back to calendar</a>
+            </div>
+          </section>`;
+      }
+
+      const longDate = formatDate(event.event_date, { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+      const picture = event.image_url
+        ? `<img src="${safe(event.image_url)}" alt="" style="border-radius:14px;margin:20px 0">`
+        : "";
+
+      return `
+        <section>
+          <div class="wrap" style="max-width:780px">
+            <a href="#/calendar">← Back to calendar</a>
+            <p class="msg" style="margin-top:20px">${longDate}</p>
+            <h1>${safe(event.title)}</h1>
+            ${picture}
+            <p class="pre">${safe(event.full_description || event.short_description)}</p>
+          </div>
+        </section>`;
+    }
+
+
+    function calendarPage() {
+      // people can only look 6 months back and 6 months ahead
+      const now = new Date();
+      const earliest = new Date(now.getFullYear(), now.getMonth() - 6, 1);
+      const latest = new Date(now.getFullYear(), now.getMonth() + 6, 1);
+
+      if (calendarMonth < earliest) calendarMonth = earliest;
+      if (calendarMonth > latest) calendarMonth = latest;
+
+      const year = calendarMonth.getFullYear();
+      const month = calendarMonth.getMonth();
+      const firstWeekday = new Date(year, month, 1).getDay();      // 0 = Sunday
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+      // top row: Sun Mon Tue...
+      const weekdayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+      let cells = weekdayNames.map(name => `<div class="h">${name}</div>`).join("");
+
+      // empty boxes before the 1st so the dates line up under the right weekday
+      cells += "<div style='border:0'></div>".repeat(firstWeekday);
+
+      // one box for every day of the month
+      for (let day = 1; day <= daysInMonth; day++) {
+        const dayKey = toDateKey(new Date(year, month, day));
+        const eventsToday = events
+          .filter(event => event.event_date === dayKey)
+          .map(event => `<a href="#/event/${event.id}">${safe(event.title)}</a>`)
+          .join("");
+
+        cells += `<div><b>${day}</b>${eventsToday}</div>`;
+      }
+
+      const monthLook = { month: "long", year: "numeric" };
+      const monthTitle = calendarMonth.toLocaleDateString("en-ZA", monthLook);
+      const fromText = earliest.toLocaleDateString("en-ZA", monthLook);
+      const toText = latest.toLocaleDateString("en-ZA", monthLook);
+
+      return `
+        <section>
+          <div class="wrap">
+            <h1>Church Calendar</h1>
+            <div class="calhead">
+              <button class="btn sm" data-act="prev" ${calendarMonth <= earliest ? "disabled" : ""}>← Previous</button>
+              <h2 style="margin:0">${monthTitle}</h2>
+              <button class="btn sm" data-act="next" ${calendarMonth >= latest ? "disabled" : ""}>Next →</button>
+            </div>
+            <div class="cal">${cells}</div>
+            <p class="msg">Showing events from ${fromText} to ${toText}.</p>
+          </div>
+        </section>`;
+    }
+
+
+    function readingsPage() {
+      const today = toDateKey(new Date());
+      let foundThisSunday = false;   // only the first upcoming Sunday gets highlighted
+
+      const rows = readings.map(reading => {
+        const isThisSunday = !foundThisSunday && reading.sunday_date >= today;
+        if (isThisSunday) foundThisSunday = true;
+
+        const dateText = formatDate(reading.sunday_date, { day: "numeric", month: "short", year: "numeric" });
+        const label = isThisSunday ? "<br><small>This Sunday</small>" : "";
+        const notes = reading.notes ? `<br><small>${safe(reading.notes)}</small>` : "";
+
+        return `
+          <div class="read ${isThisSunday ? "now" : ""}">
+            <div><b>${dateText}</b>${label}</div>
+            <div>${safe(reading.scripture)}${notes}</div>
+          </div>`;
+      }).join("") || '<p class="msg">Readings will appear here.</p>';
+
+      return `
+        <section>
+          <div class="wrap" style="max-width:780px">
+            <h1>${safe(site.series_title)}</h1>
+            <p>${safe(site.series_text)}</p>
+            <h2>Sunday readings</h2>
+            ${rows}
+          </div>
+        </section>`;
+    }
+
+
+    function appPage() {
+      // real button if there's a link, "coming soon" if not
+      function storeButton(link, label) {
+        if (link) {
+          return `<a class="btn" href="${safe(link)}">${label}</a>`;
+        }
+        return `<span class="btn ghost" style="opacity:.5">${label} — coming soon</span>`;
+      }
+
+      return `
+        <section>
+          <div class="wrap" style="max-width:780px">
+            <h1>Get the app</h1>
+            <p>Events, the calendar, and Sunday readings in your pocket.</p>
+            <div class="btns">
+              ${storeButton(site.android_url, "Download for Android")}
+              ${storeButton(site.ios_url, "Download for iPhone")}
+            </div>
+          </div>
+        </section>`;
+    }
+
+
+    // ---------- login + admin ----------
+
+    function loginPage() {
+      return `
+        <section>
+          <div class="wrap" style="max-width:420px">
+            <h1>Admin login</h1>
+            <label>Email</label>
+            <input id="em" type="email" autocomplete="username">
+            <label>Password</label>
+            <input id="pw" type="password" autocomplete="current-password">
+            <button class="btn" data-act="login">Log in</button>
+            <p class="msg" id="lmsg"></p>
+          </div>
+        </section>`;
+    }
+
+    // which boxes show up for each table in admin
+    const adminFields = {
+      events: [["title"], ["event_date", "date"], ["short_description", "area"], ["full_description", "area"], ["image_url", "img"]],
+      slides: [["image_url", "img"], ["sort", "number"]],
+      readings: [["sunday_date", "date"], ["scripture"], ["notes", "area"]]
+    };
+
+    // how each table is sorted
+    const adminSortBy = { events: "event_date", slides: "sort", readings: "sunday_date" };
+
+    // builds one label + box in the admin page
+    function makeField(name, type, value, prefix = "") {
+      const text = safe(value);
+      const dataName = `data-f="${prefix}${name}"`;
+      const label = `<label>${name.replace(/_/g, " ")}</label>`;
+
+      if (type === "area") {
+        return `${label}<textarea rows="4" ${dataName}>${text}</textarea>`;
+      }
+      if (type === "img") {
+        return `${label}<input ${dataName} value="${text}" placeholder="Image link or upload below"><input type="file" accept="image/*,video/*" data-up>`;
+      }
+      return `${label}<input ${dataName} type="${type || "text"}" value="${text}">`;
+    }
+
+    async function adminPage(tab = "texts") {
+      // not logged in? send to login
+      if (!db || !session) return loginPage();
+
+      const tabNames = ["texts", "events", "slides", "readings"];
+      const tabButtons = tabNames.map(name => {
+        const title = name === "texts" ? "Page text & images" : name[0].toUpperCase() + name.slice(1);
+        return `<button class="btn sm ${name === tab ? "" : "ghost"}" data-act="tab" data-t="${name}">${title}</button>`;
+      }).join("");
+
+      let body = "";
+
+      if (tab === "texts") {
+        // every setting from defaultText gets its own box
+        body = Object.keys(defaultText).map(key => {
+          let type = "text";
+          if (/_img$/.test(key)) type = "img";
+          else if (defaultText[key].length > 90) type = "area";
+          return makeField(key, type, site[key], "t:");
+        }).join("");
+
+        body += `<button class="btn" data-act="savetexts">Save all text</button>`;
+      } else {
+        const { data } = await db.from(tab).select("*").order(adminSortBy[tab]);
+
+        // one editable row for each thing already saved
+        body = (data || []).map(item => `
+          <div class="row" data-id="${item.id}">
+            ${adminFields[tab].map(([name, type]) => makeField(name, type, item[name])).join("")}
+            <button class="btn sm" data-act="saverow" data-tb="${tab}">Save</button>
+            <button class="btn sm ghost" data-act="delrow" data-tb="${tab}">Delete</button>
+          </div>`).join("");
+
+        // and an empty one at the bottom for adding something new
+        body += `
+          <div class="row" data-id="">
+            ${adminFields[tab].map(([name, type]) => makeField(name, type, "")).join("")}
+            <button class="btn sm" data-act="saverow" data-tb="${tab}">Add new</button>
+          </div>`;
+      }
+
+      return `
+        <section>
+          <div class="wrap" style="max-width:820px">
+            <h1>Admin</h1>
+            <p><button class="btn sm ghost" data-act="logout">Log out</button></p>
+            <div class="tabs">${tabButtons}</div>
+            ${body}
+          </div>
+        </section>`;
+    }
+
+
+    // ---------- decides which page to show ----------
+    async function showPage() {
+      // the address looks like  #/about  or  #/event/5
+      const [, pageName, extra] = (location.hash || "#/").slice(1).split("/");
+
+      clearInterval(slideTimer);
+
+      let html;
+      switch (pageName) {
+        case "about":    html = aboutPage(); break;
+        case "visit":    html = visitPage(); break;
+        case "event":    html = eventPage(extra); break;
+        case "calendar": html = calendarPage(); break;
+        case "readings": html = readingsPage(); break;
+        case "app":      html = appPage(); break;
+        case "login":    html = session ? await adminPage() : loginPage(); break;
+        case "admin":    html = await adminPage(extra || "texts"); break;
+        default:         html = homePage();
+      }
+
+      pick("#app").innerHTML = html;
+      window.scrollTo(0, 0);
+
+      // start the slideshow if we're on a page that has one
+      const slideImages = document.querySelectorAll("#slides img");
+      if (slideImages.length > 1) {
+        let current = 0;
+        slideTimer = setInterval(() => {
+          slideImages[current].classList.remove("on");
+          current = (current + 1) % slideImages.length;
+          slideImages[current].classList.add("on");
+        }, 4500);
+      }
+
+      // top bar bits
+      pick("#navlogin").textContent = session ? "Admin" : "Admin Login";
+      pick("#navlogin").href = session ? "#/admin" : "#/login";
+      pick("#navlogo").innerHTML = site.logo_img
+        ? `<img src="${safe(site.logo_img)}" alt="${safe(site.hero4)}">`
+        : safe(site.hero4);
+
+      // close the menu whenever we change page
+      pick("#menu").classList.remove("open");
+      pick("#burger").classList.remove("open");
+
+      // footer
+      const footerLogo = site.logo_img
+        ? `<img src="${safe(site.logo_img)}" alt="${safe(site.hero4)}" style="height:56px;margin-bottom:12px">`
+        : `<h3>${safe(site.hero4)}</h3>`;
+
+      pick("#foot").innerHTML = `
+        <div class="wrap fgrid">
+          <div>
+            ${footerLogo}
+            <p>${safe(site.office)}</p>
+            <p>
+              <a href="mailto:${safe(site.email)}">${safe(site.email)}</a><br>
+              <a href="tel:${safe(site.phone)}">${safe(site.phone)}</a>
+            </p>
+          </div>
+          <div>
+            <h3>Location</h3>
+            <p>${safe(site.location_name)}<br>${safe(site.location_address)}</p>
+          </div>
+          <div>
+            <h3>Follow us</h3>
+            <p>
+              <a href="${safe(site.facebook)}">Facebook</a><br>
+              <a href="${safe(site.instagram)}">Instagram</a><br>
+              <a href="${safe(site.youtube)}">YouTube</a>
+            </p>
+            <p><a href="#/app">Download the app</a></p>
+          </div>
+        </div>
+        <div class="wrap"><p>© ${new Date().getFullYear()} ${safe(site.hero4)}</p></div>`;
+    }
+
+
+    // ---------- what happens when someone clicks things ----------
+    document.addEventListener("click", async event => {
+      const button = event.target.closest("[data-act]");
+      if (!button) return;
+
+      const action = button.dataset.act;
+
+      // calendar arrows
+      if (action === "prev") {
+        calendarMonth = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth() - 1, 1);
+        return showPage();
+      }
+      if (action === "next") {
+        calendarMonth = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth() + 1, 1);
+        return showPage();
+      }
+
+      // admin tabs
+      if (action === "tab") {
+        return location.hash = "#/admin/" + button.dataset.t;
+      }
+
+      // log in
+      if (action === "login") {
+        if (!db) {
+          return pick("#lmsg").textContent = "Supabase is not connected yet. Check the keys in index.html.";
+        }
+
+        const { data, error } = await db.auth.signInWithPassword({
+          email: pick("#em").value.trim(),
+          password: pick("#pw").value
+        });
+
+        if (error) {
+          return pick("#lmsg").textContent = "Login failed: " + error.message;
+        }
+
+        session = data.session;
+        return location.hash = "#/admin";
+      }
+
+      // log out
+      if (action === "logout") {
+        await db.auth.signOut();
+        session = null;
+        return location.hash = "#/";
+      }
+
+      // save all the page text at once
+      if (action === "savetexts") {
+        const boxes = document.querySelectorAll("[data-f^='t:']");
+        const rows = [...boxes].map(box => ({
+          key: box.dataset.f.slice(2),
+          value: box.value
+        }));
+
+        const { error } = await db.from("site_content").upsert(rows);
+        if (error) return alert("Save failed: " + error.message);
+
+        await loadEverything();
+        alert("Saved.");
+        return showPage();
+      }
+
+      // save or delete one event / slide / reading
+      if (action === "saverow" || action === "delrow") {
+        const row = button.closest(".row");
+        const id = row.dataset.id;
+        const table = button.dataset.tb;
+
+        if (action === "delrow") {
+          if (!confirm("Delete this item?")) return;
+          await db.from(table).delete().eq("id", id);
+        } else {
+          // collect everything typed in this row (empty boxes become null)
+          const values = {};
+          row.querySelectorAll("[data-f]").forEach(box => {
+            values[box.dataset.f] = box.value === "" ? null : box.value;
+          });
+
+          // has an id = update it, no id = it's a new one
+          const { error } = id
+            ? await db.from(table).update(values).eq("id", id)
+            : await db.from(table).insert(values);
+
+          if (error) return alert("Save failed: " + error.message);
+        }
+
+        await loadEverything();
+        return showPage();
+      }
+    });
+
+    // uploading a picture from the admin page
+    document.addEventListener("change", async event => {
+      const box = event.target;
+      if (!box.matches("[data-up]") || !box.files[0]) return;
+
+      const file = box.files[0];
+      const fileName = Date.now() + "-" + file.name.replace(/[^\w.-]/g, "_");
+
+      const { error } = await db.storage.from("media").upload(fileName, file);
+      if (error) return alert("Upload failed: " + error.message);
+
+      // put the picture's link into the box above the file chooser
+      const link = db.storage.from("media").getPublicUrl(fileName).data.publicUrl;
+      box.previousElementSibling.value = link;
+      alert("Uploaded. Now press Save.");
+    });
+
+    // menu button opens and closes the dropdown
+    pick("#burger").addEventListener("click", () => {
+      const isOpen = pick("#menu").classList.toggle("open");
+      pick("#burger").classList.toggle("open", isOpen);
+      pick("#burger").setAttribute("aria-expanded", isOpen);
+    });
+
+    // clicking anywhere else closes the menu
+    document.addEventListener("click", event => {
+      if (!event.target.closest("#top")) {
+        pick("#menu").classList.remove("open");
+        pick("#burger").classList.remove("open");
+      }
+    });
+
+    // change page when the address (#/something) changes
+    window.addEventListener("hashchange", showPage);
+
+    // start everything
+    loadEverything().then(showPage);
+  </script>
 </body>
 </html>
