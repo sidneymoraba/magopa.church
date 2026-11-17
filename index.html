@@ -552,7 +552,7 @@
 
       location_name: "Mpunga Street Soshanguve South",
       location_address: "Mpunga Street Soshanguve South",
-      service_times: "Sundays : 11h00 — 14h00",
+      service_times: "Sundays: 11h00 – 14h00\nSaturdays: 09h00 – 13h00\nWednesdays and Saturdays: Private meetings with Ntate Magopa",
       email: "",
       phone: "",
       office: " ",
@@ -853,7 +853,7 @@
             <h1>Visit Us</h1>
             <h2>${safe(site.location_name)}</h2>
             <p>${safe(site.location_address)}</p>
-            <p>${safe(site.service_times)}</p>
+            <p class="pre">${safe(site.service_times)}</p>
             <p>${safe(site.hero_invite)}</p>
             <div class="btns">
               <a class="btn" href="${mapsLink}" target="_blank" rel="noopener">Get Directions</a>
@@ -1061,7 +1061,7 @@
         body = Object.keys(defaultText).map(key => {
           let type = "text";
           if (/_img$/.test(key)) type = "img";
-          else if (defaultText[key].length > 90) type = "area";
+          else if (defaultText[key].length > 90 || key === "service_times") type = "area";
           return makeField(key, type, site[key], "t:");
         }).join("");
 
